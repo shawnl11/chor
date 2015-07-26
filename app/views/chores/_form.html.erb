@@ -1,0 +1,41 @@
+<%= form_for(@chore) do |f| %>
+  <% if @chore.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chore.errors.count, "error") %> prohibited this chore from being saved:</h2>
+
+      <ul>
+      <% @chore.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :starttime %><br>
+    <%= f.datetime_select :starttime %>
+  </div>
+  <div class="field">
+    <%= f.label :endtime %><br>
+    <%= f.datetime_select :endtime %>
+  </div>
+  <div class="field">
+    <%= f.label :allday %><br>
+    <%= f.text_field :allday %>
+  </div>
+  <div class="field">
+    <%= f.label :chore_location %><br>
+    <%= f.text_field :chore_location %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

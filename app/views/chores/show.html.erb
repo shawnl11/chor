@@ -1,0 +1,35 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @chore.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @chore.url %>
+</p>
+
+<p>
+  <strong>Starttime:</strong>
+  <%= @chore.starttime %>
+</p>
+
+<p>
+  <strong>Endtime:</strong>
+  <%= @chore.endtime %>
+</p>
+
+<p>
+  <strong>Allday:</strong>
+  <%= @chore.allday %>
+</p>
+
+<p>
+
+<p>
+  <strong>Chore location:</strong>
+  <%= @chore.chore_location %>
+</p>
+
+<%= link_to 'Edit', edit_chore_path(@chore) %> |
+<%= link_to 'Back', chores_path %>
