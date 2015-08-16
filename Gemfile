@@ -19,6 +19,9 @@ gem 'devise'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem "twitter-bootstrap-rails"
+#omniauth
+gem 'omniauth'
+gem 'omniauth-twitter'
 #environment variables
 gem 'figaro'
 
