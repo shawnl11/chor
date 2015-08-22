@@ -18,7 +18,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails'
+gem 'omniauth-twitter'
+gem 'bootstrap_form'
 #environment variables
 gem 'figaro'
 

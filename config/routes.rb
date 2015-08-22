@@ -14,6 +14,11 @@ Rails.application.routes.draw do
       post :resize
     end
   end
+
+  # OAuth
+  get 'auth/twitter/callback', to: 'sessions#twitter', as: :twitter_auth
+  get 'auth/failure', to: 'sessions#failure'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,0 +1,7 @@
+development:
+  client_id: 'x4CZZKTMJnkYeffPhd3dRiLrW'
+  client_secret: 'qbil0ZYtUkBXazmYG90TJtnqDN6L64XEGzJraKNWyaxu8nkpqu'
+
+test:
+  client_id: 'x4CZZKTMJnkYeffPhd3dRiLrW'
+  client_secret: 'qbil0ZYtUkBXazmYG90TJtnqDN6L64XEGzJraKNWyaxu8nkpqu'

@@ -1,5 +1,8 @@
-<%= menu_item "New Chore", new_chore_path, class: 'btn-lg btn-info btn-block text-center' %>
 <br>
+<%= link_to 'New Chore', new_chore_path %>
+
+<%= link_to "Sign in with Twitter", "/auth/twitter", class: 'btn-lg btn-primary btn-block text-center' %>
+
 <script>
   $(document).ready(function() {
     var date = new Date();
@@ -8,28 +11,12 @@
     var y = date.getFullYear();
    
    $('#calendar').fullCalendar({
-   editable: false,
-   header: {
+     header: {
      left: 'prev,next today',
      center: 'title',
      right: 'month,agendaWeek,agendaDay'
    },
-   defaultView: 'agendaWeek',
-   slotMinutes: 15,
-   loading: function(bool){
-     if (bool)
-       $('#loading').show();
-     else
-       $('#loading').hide();
-   },
-   timeFormat: 'h:mm t ',
-   dragOpacity: "0.5",
-   eventDrop: function(event, dayDelta, minuteDelta, allDay){
-     moveEvent(event, dayDelta, minuteDelta, allDay); 
-  },
-  eventClick: function(event, jsEvent, view){
-  showEventDetails(event);
-  },
+   editable: false,
    events: {
     url: '/chores',
     type: 'GET',
