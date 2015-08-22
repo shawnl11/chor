@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<%= nav_bar do %>
-  <%= menu_group do %>
-    <%= menu_item "Home", root_path, class: ' btn-sm btn-info btn-block text-center' %>
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> 
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, class: 'btn-lg btn-info btn-block text-center'  %> 
-  <%= link_to "Login", new_user_session_path, class: 'btn-lg btn-info btn-block text-center'  %>
-  <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), class: 'btn-lg btn-info btn-block text-center' %>
-<% end %>
-
-<% end %>
-<% end %>
-
   <title>Chor</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
+
+<div class="container-narrow">
+  <div class="masthead">
+    <%= render 'layouts/user_header' %>
+    <h5 class="text-center">A Chore Tracking Application</h5>
+  </div>
+  <hr />
+</div>
+
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
+
+
+<% if !user_signed_in? %>
+  <%= link_to "Sign up", new_user_registration_path, class: 'btn-lg btn-info btn-block text-center'  %>
+  <%= link_to "Login", new_user_session_path, class: 'btn-lg btn-info btn-block text-center'  %>
+  <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), class: 'btn-lg btn-info btn-block text-center' %>
+  <% end %>
 
 <%= yield %>
 
