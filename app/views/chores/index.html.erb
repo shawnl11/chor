@@ -8,7 +8,7 @@
     var y = date.getFullYear();
    
    $('#calendar').fullCalendar({
-   editable: false,
+   editable: true,
    header: {
      left: 'prev,next today',
      center: 'title',
@@ -24,12 +24,7 @@
    },
    timeFormat: 'h:mm t ',
    dragOpacity: "0.5",
-   eventDrop: function(event, dayDelta, minuteDelta, allDay){
-     moveEvent(event, dayDelta, minuteDelta, allDay); 
-  },
-  eventClick: function(event, jsEvent, view){
-  showEventDetails(event);
-  },
+  
    events: {
     url: '/chores',
     type: 'GET',

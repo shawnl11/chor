@@ -12,7 +12,7 @@
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, class: 'btn-lg btn-info btn-block text-center'  %> 
   <%= link_to "Login", new_user_session_path, class: 'btn-lg btn-info btn-block text-center'  %>
-  <%= link_to "Sign in with Twitter", "/auth/twitter", class: 'btn-lg btn-info btn-block text-center' %>
+  <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), class: 'btn-lg btn-info btn-block text-center' %>
 <% end %>
 
 <% end %>
