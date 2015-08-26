@@ -9,4 +9,10 @@ class UserMailer < ApplicationMailer
   	@user = user
     mail(to: user.email, subject: "You've signed up do Chores!")
   end
+
+  def weekly_chores(user)
+    @user = user
+    @chores = user.chores.created_in_last_week
+    mail(to: user.email, subject: "Weekly Chores")
+  end
 end

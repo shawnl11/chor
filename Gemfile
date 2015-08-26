@@ -21,6 +21,9 @@ gem 'momentjs-rails'
 gem 'twitter-bootstrap-rails'
 gem 'omniauth-twitter'
 gem 'bootstrap_form'
+
+gem 'whenever', :require => nil
+gem 'sinatra', :require => nil
 #environment variables
 gem 'figaro'
 
