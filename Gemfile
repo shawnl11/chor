@@ -18,7 +18,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails'
+gem 'omniauth-twitter'
+gem 'bootstrap_form'
 #environment variables
 gem 'figaro'
 
@@ -49,6 +51,11 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+
+  gem 'mailcatcher'
+  gem 'rspec-rails'
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
