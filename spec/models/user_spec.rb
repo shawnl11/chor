@@ -7,9 +7,13 @@ describe User do
   let(:attributes) { attributes_for :user }
 
   describe "#create" do
+  	it "should be valid" do
+  	  FactoryGirl.create(:user).should be_valid
+  	end
+
     it "sends welcome email" do
       expect {
-    	user.send(:send_welcome_email)
+    	FactoryGirl.create(:user)
       }.to change(ActionMailer::Base.deliveries, :count).by(1)
     end
   end
