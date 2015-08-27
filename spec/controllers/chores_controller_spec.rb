@@ -15,8 +15,21 @@ describe ChoresController, type: :controller do
 
   describe "#updated" do
   	it "is successful" do
-  	  post :update, chore: attrs
-  	  expect(response).to be_success
+      attrs = { title: "new", allday: "true"}
+  	  put :update, id: "", chore: attrs
+      expect(assigns(:chore)).to eq :chore
   	end
+  end
+
+  describe "#destroy" do
+
+    before do
+      post :create, chore: attrs
+      delete :destroy, id: ""
+    end
+
+    it "deletes a chore" do
+      expect(:chore).to be_nil
+    end
   end
 end

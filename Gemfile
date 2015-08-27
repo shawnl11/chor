@@ -27,6 +27,9 @@ gem 'sinatra', :require => nil
 #environment variables
 gem 'figaro'
 
+group :development, :test do
+  gem "rack_session_access"
+end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
