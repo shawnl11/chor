@@ -18,9 +18,9 @@ class User < ActiveRecord::Base
     end
  end
 
-  private
+private
 
-    def send_welcome_email
-    	UserMailer.welcome_email(self).deliver_now
-    end
+  def send_welcome_email
+    UserMailer.welcome_email(self).deliver_now
+  end
 end
