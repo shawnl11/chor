@@ -8,16 +8,18 @@ describe ChoresController, type: :controller do
   let(:attrs) { chore.attributes }
 
   describe "#create" do
+
   	it "changes count when a new chore is created" do
   	  expect { post :create, chore: attrs}.to change(Chore, :count).by(1)
   	end
   end
 
   describe "#updated" do
+
   	it "is successful" do
       attrs = { title: "new", allday: "true"}
   	  put :update, id: "", chore: attrs
-      expect(assigns(:chore)).to eq :chore
+      expect(assigns(:chore).title).to eq attrs[:title]
   	end
   end
 
