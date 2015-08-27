@@ -1,0 +1,23 @@
+<h2>Weekly Stats</h2>
+
+<p>Here are your weekly chores stats:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Chore Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @chores.each do |link| %>
+      <tr>
+        <td><%= chores.title %></td>
+        <td><%= chores.starttime %></td>
+        <td><%= chores.endtime %></td>
+        <td><%= chores.location %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
