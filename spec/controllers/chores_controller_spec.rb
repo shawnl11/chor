@@ -4,34 +4,31 @@ require 'rails_helper'
 describe ChoresController, type: :controller do
   
   let(:chore) { create(:chore) }
-  let(:user) { create(:user) }
   let(:attrs) { chore.attributes }
 
   describe "#create" do
 
-  	it "changes count when a new chore is created" do
-  	  expect { post :create, chore: attrs}.to change(Chore, :count).by(1)
-  	end
+	  it "changes count when a new chore is created" do
+      expect { post :create, chore: attrs }.to change(Chore, :count).by(1)
+	  end
   end
 
   describe "#updated" do
 
-  	it "is successful" do
-      attrs = { title: "new", allday: "true"}
-  	  put :update, id: "", chore: attrs
-      expect(assigns(:chore).title).to eq attrs[:title]
-  	end
+ 	  it "is successful" do
+      put :update, id: chore, chore: attrs
+      assigns(attrs).should eq(attrs)
+ 	  end
   end
 
   describe "#destroy" do
 
     before do
       post :create, chore: attrs
-      delete :destroy, id: ""
     end
 
     it "deletes a chore" do
-      expect(:chore).to be_nil
+      expect{ delete :destroy, id: chore }.to change(Chore, :count).by(-1)
     end
   end
 end
