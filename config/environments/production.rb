@@ -68,7 +68,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.mandrillapp.com",
     port: "587",
-    domain: "gmail.com",
+    domain: "heroku.com",
     authentication: 'login',
     enable_starttls_auto: true,
     user_name: MANDRILL['username'],

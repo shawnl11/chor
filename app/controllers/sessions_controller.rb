@@ -1,7 +1,7 @@
 
 
 def twitter
-  auth = request.env["omniauth.auth']
+  auth = request.env["omniauth.auth"]
   user = User.where(uid: auth["uid"]).first || User.from_twitter(auth)
   if user
     session[:user_id] = user.id
